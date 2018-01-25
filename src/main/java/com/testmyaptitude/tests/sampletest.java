@@ -2,7 +2,7 @@ package com.testmyaptitude.tests;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.*;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -13,15 +13,15 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
+import com.testmyaptitude.Quant;
 import com.testmyaptitude.dao.QuantDAO;
-import com.testmyaptitude.pojo.*;
 
 
 public class sampletest extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		QuantDAO qd=new QuantDAO();
-		List<question> ques=qd.getallquestions();
+		List<Quant> ques=qd.getallquestions();
 		PrintWriter out=response.getWriter();
 		Gson gson = new GsonBuilder().create();
 		JsonArray jarray = gson.toJsonTree(ques).getAsJsonArray();

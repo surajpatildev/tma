@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="com.testmyaptitude.pojo.*"%>
-<%@page import="com.testmyaptitude.dao.*"%>
+<%@page import="com.testmyaptitude.*,com.testmyaptitude.dao.*"%>
 <%@page import="java.util.*" %>
 <%
 	if (session.getAttribute("admin") != null) {
 	QuantDAO qd=new QuantDAO();
-	List<question> ques=qd.getallquestions();
+	List<Quant> ques=qd.getallquestions();
 	String dir="";
 %>
 
@@ -98,10 +98,10 @@
                         <td><%=ques.get(i).getQid() %></td>
                         <td><%=dir%></td>
                         <td><%=ques.get(i).getQuestion()%></td>
-                        <td><%=ques.get(i).getOption_1() %></td>
-                        <td><%=ques.get(i).getOption_2() %></td>
-                        <td><%=ques.get(i).getOption_3() %></td>
-                        <td><%=ques.get(i).getOption_4() %></td>
+                        <td><%=ques.get(i).getOption1() %></td>
+                        <td><%=ques.get(i).getOption2() %></td>
+                        <td><%=ques.get(i).getOption3() %></td>
+                        <td><%=ques.get(i).getOption4() %></td>
                         <td><%=ques.get(i).getAnswer() %></td>
                     </tr>
                 <%} %>
