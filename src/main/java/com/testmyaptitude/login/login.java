@@ -16,6 +16,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.testmyaptitude.dao.UsersDAO;
+import com.testmyaptitude.pojo.Users;
 import com.testmyaptitude.pojo.user;
 import com.testmyaptitude.signup.signup;
 
@@ -40,7 +41,7 @@ public class login extends HttpServlet {
             if (u.checkuser(email,pass)) {
                 HttpSession session=request.getSession();
                 session.setAttribute("uname",email);
-               user user=u.getUser(email);
+               Users user=u.getUser(email);
                 session.setAttribute("user",user);
                 out.println(1);
             } else {

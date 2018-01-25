@@ -13,8 +13,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
-import com.testmyaptitude.Quant;
 import com.testmyaptitude.dao.QuantDAO;
+import com.testmyaptitude.pojo.Quant;
 
 
 public class sampletest extends HttpServlet {

@@ -8,17 +8,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
-import com.testmyaptitude.Quant;
-import com.testmyaptitude.pojo.question;
+import com.testmyaptitude.SessionFactoryHelper;
+import com.testmyaptitude.pojo.Quant;
 public class QuantDAO {
 
-	static SessionFactory sf;
-	static{
-		
-		 sf=new Configuration().configure().buildSessionFactory();		
-	}
 	
-	public void addquestion(question q) throws SQLException {
+	public void addquestion(Quant q) throws SQLException {
 		String sql = "INSERT INTO quant(DIRECTION,PASSAGE,QUESTION,OPTION_1, OPTION_2,OPTION_3,OPTION_4,ANSWER)"
 				+ " VALUES(?,?,?,?,?,?,?,?)";
 		
@@ -26,8 +21,8 @@ public class QuantDAO {
 
 public List<Quant> getallquestions(){
 List<Quant>	ql=new ArrayList<Quant>();
-Session session=sf.openSession();
-	ql=session.createQuery("from com.testmyaptitude.Quant").getResultList();
+Session session=SessionFactoryHelper.getSessionFactory().openSession();
+	ql=session.createQuery("from com.testmyaptitude.pojo.Quant").getResultList();
 Collections.shuffle(ql);
 return ql;
  }
@@ -36,7 +31,7 @@ return ql;
 
 public Quant getaquestion(int i){
 	Quant q=null;
-	Session session=sf.openSession();
+	Session session=SessionFactoryHelper.getSessionFactory().openSession();
 	q=session.get(Quant.class,i);
 return q;
  }

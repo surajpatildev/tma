@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@page import="com.testmyaptitude.pojo.*"%>
-<%@page import="com.testmyaptitude.*,com.testmyaptitude.dao.*"%>
+<%@page import="com.testmyaptitude.dao.*"%>
 <%@page import="java.util.*" %>
 <%
 	if (session.getAttribute("admin") != null) {

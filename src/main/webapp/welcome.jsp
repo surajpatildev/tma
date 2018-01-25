@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@page import="com.testmyaptitude.pojo.*"%>
-<%!user user;%>
+<%!Users user;%>
 <%
 	if (session.getAttribute("user") != null) {
 %><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -17,9 +17,9 @@
 <body>
 	<%
 		if (session.getAttribute("uname") == null) {
-				response.sendRedirect("index.html");
+				response.sendRedirect("./");
 			}
-			user = (user) session.getAttribute("user");
+			user = (Users) session.getAttribute("user");
 	%>
 
 	<nav class="navbar navbar-inverse">
@@ -234,6 +234,6 @@ If any doubt arises while solving the questions, answers were given soon after t
 %>
 <%
 	if (session.getAttribute("uname") == null) {
-		response.sendRedirect("index.html");
+		response.sendRedirect("./");
 	}
 %>

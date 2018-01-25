@@ -5,7 +5,7 @@
   <artifactId>tma</artifactId>
   <packaging>war</packaging>
   <version>0.0.1-SNAPSHOT</version>
-  <name>testmyaptitude Maven Webapp</name>
+  <name>tma Maven Webapp</name>
   <url>http://maven.apache.org</url>
   <properties>
 		<jdk.version>1.7</jdk.version>

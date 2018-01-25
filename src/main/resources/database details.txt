@@ -1,0 +1,4 @@
+hostname:mysql7002.site4now.net
+port : 3306
+user : luq7bmtf_spatil
+pass : root123

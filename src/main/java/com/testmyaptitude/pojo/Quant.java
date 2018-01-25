@@ -1,4 +1,4 @@
-package com.testmyaptitude;
+package com.testmyaptitude.pojo;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

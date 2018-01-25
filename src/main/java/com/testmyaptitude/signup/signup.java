@@ -3,6 +3,7 @@ package com.testmyaptitude.signup;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.Date;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -13,6 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.testmyaptitude.dao.UsersDAO;
+import com.testmyaptitude.pojo.Users;
 import com.testmyaptitude.pojo.user;
 
 /**
@@ -43,15 +45,16 @@ public class signup extends HttpServlet {
                 
             } else {
           	  System.out.println("it is"+u.check(email));
-                user us=new user();
+                Users us=new Users();
                 us.setFname(request.getParameter("firstname"));
                 us.setLname(request.getParameter("lastname"));
                 us.setEmail(request.getParameter("emailid"));
                 us.setPassword(request.getParameter("pass1"));
                 us.setGender(request.getParameter("gender"));
-                us.setDate(request.getParameter("date"));
-                us.setMonth(request.getParameter("month"));
-                us.setYear(request.getParameter("year"));
+                int date=Integer.parseInt(request.getParameter("date"));
+                int month=Integer.parseInt(request.getParameter("month"))-1;
+                int year=Integer.parseInt(request.getParameter("year"))-1990;
+                us.setDob(new Date(year, month, date));
                 us.setMobileno(request.getParameter("phonenumber"));
                 PrintWriter out=response.getWriter();
                 System.out.println("added into user");
@@ -59,7 +62,7 @@ public class signup extends HttpServlet {
                 System.out.println("returned");
                 HttpSession session=request.getSession();
                 session.setAttribute("uname",email);
-                user user=u.getUser(email);
+                Users user=u.getUser(email);
                 session.setAttribute("user",user);
                 response.sendRedirect("welcome.jsp");
                 System.out.println("all done");

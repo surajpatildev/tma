@@ -6,7 +6,7 @@
 <%
 	if (session.getAttribute("admin") != null) {
 	UsersDAO u=new UsersDAO();
-	List<user> users=u.getallusers();
+	List<Users> users=u.getallusers();
 %>
 
     <html lang="en">
@@ -45,6 +45,9 @@
 }
 .filterable .filters input[disabled]:-ms-input-placeholder {
     color: #333;
+}
+.container{
+	width:97%;
 }
 
     </style>
@@ -108,6 +111,7 @@
                         <th><input type="text" class="form-control" placeholder="Gender" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Date of Birth" disabled></th>
                         <th><input type="text" class="form-control" placeholder="Mobile No." disabled></th>
+                        <th><input type="text" class="form-control" placeholder="Creation Date" disabled></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -116,9 +120,10 @@
                         <td><%=users.get(i).getId() %></td>
                         <td><%=users.get(i).getFname()%> <%=users.get(i).getLname() %></td>
                         <td><%=users.get(i).getEmail() %></td>
-                        <td><%=users.get(i).getGender() %></td>
-                        <td><%=users.get(i).getDateob() %></td>
+                        <td><%=users.get(i).getGender()%></td>
+                        <td><%=users.get(i).getDob() %></td>
                         <td><%=users.get(i).getMobileno() %></td>
+                        <td><%=users.get(i).getEntryTime()%></td>
                     </tr>
                 <%} %>
                 </tbody>
