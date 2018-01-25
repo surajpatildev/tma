@@ -1,3 +1,4 @@
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <footer id="myFooter">
         <div class="conainer">
             <div class="row">
@@ -9,9 +10,10 @@
                     <ul>
                         <li><a href="index.jsp">Home</a></li>
                         <li><a href="test.jsp">Take a sample Test</a></li>
+          <c:if test="${empty sessionScope.user}">
                         <li><a href="signup.jsp">Sign up</a></li>
                         <li><a href="login.jsp">LogIn</a></li>
-                        
+            </c:if>            
                     </ul>
                 </div>
                 <div class="col-sm-3">

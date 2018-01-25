@@ -3,10 +3,10 @@
 <html lang="en">
 <head>
 <title>TEST MY APTITUDE- Home</title>
-<%@include file="imports.jsp" %>
+<%@include file="WEB-INF/imports.jsp" %>
 </head>
 <body>
-<%@include file="navbar.jsp" %>
+<%@include file="WEB-INF/navbar.jsp" %>
 	<div class="container contact-body">
 
             <div class="row">
@@ -83,6 +83,6 @@
 
         </div> <!-- /.container-->
 
-	<%@include file="footer.jsp" %>
+	<%@include file="WEB-INF/footer.jsp" %>
 </body>
 </html>

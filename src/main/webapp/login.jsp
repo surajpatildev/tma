@@ -1,12 +1,15 @@
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:if test="${not empty sessionScope.user}">
+ <c:redirect url="./"/>              
+ </c:if>            
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>TEST MY APTITUDE- Home</title>
-<%@include file="imports.jsp" %>
+<%@include file="WEB-INF/imports.jsp" %>
 </head>
 <body>
-    <%@include file="navbar.jsp" %>
+    <%@include file="WEB-INF/navbar.jsp" %>
 	<div class="container">
 	<div class="row">
        <div class="col-md-4"></div>
@@ -218,6 +221,6 @@ If any doubt arises while solving the questions, answers were given soon after t
 			class="sr-only">Next</span>
 		</a>
 	</div>
-   <%@include file="footer.jsp" %>
+   <%@include file="WEB-INF/footer.jsp" %>
 </body>
 </html>

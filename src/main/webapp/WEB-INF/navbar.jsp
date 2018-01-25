@@ -1,4 +1,7 @@
-
+<%@page isELIgnored="false" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:choose>
+<c:when test="${empty sessionScope.user}">
 <nav class="navbar navbar-inverse">
 		<div class="container-fluid">
 			<div class="navbar-header">
@@ -7,11 +10,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-				<a class="navbar-brand" id="navbrand" href="index.jsp">TestMyAptitude</a>
+				<a class="navbar-brand" id="navbrand" href="./">TestMyAptitude</a>
 			</div>
 			<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
-				<li class="active"><a href="index.jsp">Home</a></li>
+				<li class="active"><a href="./">Home</a></li>
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#">Tests<span class="caret"></span></a>
 					<ul class="dropdown-menu">
@@ -237,3 +240,34 @@
 		</div>
         </div>
 	</nav>
+</c:when>
+<c:otherwise>
+	<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<a class="navbar-brand" id="navbrand" href="./">TestMyAptitude</a>
+		</div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="./">Home</a></li>
+				<li class="dropdown"><a class="dropdown-toggle"
+					data-toggle="dropdown" href="#">Tests<span class="caret"></span></a>
+					<ul class="dropdown-menu">
+						<li><a href="#">Quantitative</a></li>
+						<li><a href="#">Verbal</a></li>
+						<li><a href="#">Logical</a></li>
+					</ul></li>
+				<li><a href="contact.jsp">Contact Us</a></li>
+			</ul>
+		<ul class="nav navbar-nav navbar-right"><li class="dropdown"><a class="dropdown-toggle"
+				data-toggle="dropdown" href="#">Welcome ${user.getFname()}<span
+					class="caret"></span></a>
+				<ul class="dropdown-menu">
+					<li><a href="#">My Profile</a></li>
+					<li><a href="#">My Tests</a></li>
+					<li><a href="logout">Log Out</a></li>
+				</ul></li>
+		</ul>
+	</div>
+	</nav>
+</c:otherwise>
+</c:choose>

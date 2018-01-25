@@ -5,10 +5,10 @@
 <html lang="en">
 <head>
 <title>TEST MY APTITUDE- Home</title>
-<%@include file="imports.jsp" %>
+<%@include file="WEB-INF/imports.jsp" %>
 </head>
 <body>
-	<%@include file="navbar.jsp" %>
+	<%@include file="WEB-INF/navbar.jsp" %>
 	<div class="container resetpass">
 	 <div class="form-gap"></div>
 	<div class="row">
@@ -48,6 +48,6 @@
         </div>
     </div>
     <div class="form-gap"></div>
- <%@include file="footer.jsp" %>
+ <%@include file="WEB-INF/footer.jsp" %>
 </body>
 </html>

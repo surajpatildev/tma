@@ -3,7 +3,7 @@
 <!DOCTYPE html>
             <html lang="en">
             <head>
-            <%@include file="imports.jsp" %>
+            <%@include file="WEB-INF/imports.jsp" %>
             <script type="text/javascript">
             window.onbeforeunload = function() {
         		return "Data will be lost if you leave the page, are you sure?";
@@ -13,7 +13,7 @@
             </head>
             <body id="bg">
                     
-               <%@include file="navbar.jsp" %>
+               <%@include file="WEB-INF/navbar.jsp" %>
                 <div class="container">
                 <div class="questionset" id="instructions">
                 <br><br><br><h2>Hi, Welcome to TestMyAptitude</h2>
@@ -62,6 +62,6 @@
                 </div>
                 <br><br><br><br><br><br>
                 </div>
-        <%@include file="footer.jsp" %>
+        <%@include file="WEB-INF/footer.jsp" %>
             </body>
             </html>

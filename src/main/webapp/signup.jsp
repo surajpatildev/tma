@@ -1,13 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-
+ <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ 
+<c:if test="${not empty sessionScope.user}">
+ <c:redirect url="./"/>              
+ </c:if>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<%@include file="imports.jsp" %>
+<%@include file="WEB-INF/imports.jsp" %>
 </head>
 <body>
-	<%@include file="navbar.jsp" %>
+	<%@include file="WEB-INF/navbar.jsp" %>
 	<div class="container">
 	<div class="row">
        <div class="col-md-2"></div>
@@ -159,7 +163,7 @@
         <div class="col-md-2"></div>
         </div>
     </div>
-    <%@include file="footer.jsp" %>
+    <%@include file="WEB-INF/footer.jsp" %>
     
     <script src="js/formvalidate.js" type="text/javascript"></script>
 </body>

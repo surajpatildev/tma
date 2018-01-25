@@ -3,10 +3,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<%@include file="imports.jsp" %>
+<%@include file="WEB-INF/imports.jsp" %>
 </head>
 <body>
-	<%@include file="navbar.jsp" %>
+	<%@include file="WEB-INF/navbar.jsp" %>
 	<div class="jumbotron text-center row" id="jumbo">
 		
 		<div class="box col-lg-8 col-md-8 col-sm-10 jumbo">
@@ -207,6 +207,6 @@ If any doubt arises while solving the questions, answers were given soon after t
 			class="sr-only">Next</span>
 		</a>
 	</div>
-   <%@include file="footer.jsp" %>
+  <%@include file="WEB-INF/footer.jsp" %>
 </body>
 </html>

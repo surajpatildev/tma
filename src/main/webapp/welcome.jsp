@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@page import="com.testmyaptitude.pojo.*"%>
 <%!Users user;%>
 <%
@@ -7,12 +7,7 @@
 %><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<%@include file="imports.jsp" %>
-<style>
-.logoutbtn {
-	margin-top: 8px;
-}
-</style>
+<%@include file="WEB-INF/imports.jsp" %>
 </head>
 <body>
 	<%
@@ -22,33 +17,7 @@
 			user = (Users) session.getAttribute("user");
 	%>
 
-	<nav class="navbar navbar-inverse">
-	<div class="container-fluid">
-		<div class="navbar-header">
-			<a class="navbar-brand" href="welcome.jsp">TestMyAptitude.com</a>
-		</div>
-		<ul class="nav navbar-nav">
-			<li class="active"><a href="">Home</a></li>
-		</ul>
-		
-		<ul class="nav navbar-nav navbar-right">
-			<li>
-				<form action="logout">
-					<button type="submit" class="logoutbtn btn btn-danger btn-sm">Logout</button>
-				</form>
-			</li>
-		</ul>
-		<ul class="nav navbar-nav navbar-right"><li class="dropdown"><a class="dropdown-toggle"
-				data-toggle="dropdown" href="#">Welcome <%=user.getFname()%><span
-					class="caret"></span></a>
-				<ul class="dropdown-menu">
-					<li><a href="#">My Profile</a></li>
-					<li><a href="#">My Tests</a></li>
-					<li><a href="logout">Log Out</a></li>
-				</ul></li>
-		</ul>
-	</div>
-	</nav>
+<%@include file="WEB-INF/navbar.jsp" %>
 	<div class="container">
 		<br><br><br>
 		<!-- rowinfo ends -->
@@ -226,7 +195,7 @@ If any doubt arises while solving the questions, answers were given soon after t
 			class="sr-only">Next</span>
 		</a>
 	</div>
-	<%@include file="footer.jsp" %>
+	<%@include file="WEB-INF/footer.jsp" %>
 </body>
 </html>
 <%
