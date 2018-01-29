@@ -13,5 +13,6 @@
         <property name="show_sql">true</property>
         <mapping class="com.testmyaptitude.pojo.Users"/>
         <mapping class="com.testmyaptitude.pojo.Quant"/>
+        <mapping class="com.testmyaptitude.pojo.ContactUs"/>
     </session-factory>
 </hibernate-configuration>

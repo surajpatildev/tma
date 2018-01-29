@@ -1,22 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@page import="com.testmyaptitude.pojo.*"%>
-<%!Users user;%>
-<%
-	if (session.getAttribute("user") != null) {
-%><!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<c:if test="${ empty sessionScope.uname }">
+<c:redirect url="./"/>
+</c:if>
+<c:if test="${not empty sessionScope.user }">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <%@include file="WEB-INF/imports.jsp" %>
 </head>
 <body>
-	<%
-		if (session.getAttribute("uname") == null) {
-				response.sendRedirect("./");
-			}
-			user = (Users) session.getAttribute("user");
-	%>
-
 <%@include file="WEB-INF/navbar.jsp" %>
 	<div class="container">
 		<br><br><br>
@@ -198,11 +193,4 @@ If any doubt arises while solving the questions, answers were given soon after t
 	<%@include file="WEB-INF/footer.jsp" %>
 </body>
 </html>
-<%
-	}
-%>
-<%
-	if (session.getAttribute("uname") == null) {
-		response.sendRedirect("./");
-	}
-%>
+</c:if>
