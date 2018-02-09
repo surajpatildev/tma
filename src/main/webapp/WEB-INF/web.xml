@@ -83,6 +83,12 @@
   	<description></description>
   	<servlet-class>com.testmyaptitude.ContactUsAction</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>AddQuestionServlet</servlet-name>
+  	<display-name>AddQuestionServlet</display-name>
+  	<description></description>
+  	<servlet-class>com.testmyaptitude.admin.AddQuestionServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>test1</servlet-name>
   	<url-pattern>/test1</url-pattern>
@@ -139,6 +145,10 @@
   <servlet-mapping>
   	<servlet-name>ContactUsAction</servlet-name>
   	<url-pattern>/contactus</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>AddQuestionServlet</servlet-name>
+  	<url-pattern>/add-question</url-pattern>
   </servlet-mapping>
   <welcome-file-list>
   <welcome-file>/index.jsp</welcome-file>

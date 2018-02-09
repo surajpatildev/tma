@@ -13,10 +13,11 @@ import com.testmyaptitude.pojo.Quant;
 public class QuantDAO {
 
 	
-	public void addquestion(Quant q) throws SQLException {
-		String sql = "INSERT INTO quant(DIRECTION,PASSAGE,QUESTION,OPTION_1, OPTION_2,OPTION_3,OPTION_4,ANSWER)"
-				+ " VALUES(?,?,?,?,?,?,?,?)";
-		
+	public void addquestion(Quant ques) {
+		Session session=SessionFactoryHelper.getSessionFactory().openSession();
+		session.beginTransaction();
+		session.save(ques);
+		session.getTransaction().commit();
 	}
 
 public List<Quant> getallquestions(){
