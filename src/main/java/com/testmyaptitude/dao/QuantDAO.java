@@ -17,6 +17,7 @@ public class QuantDAO {
 		Session session=SessionFactoryHelper.getSessionFactory().openSession();
 		session.beginTransaction();
 		session.save(ques);
+		
 		session.getTransaction().commit();
 	}
 
